@@ -376,12 +376,12 @@ nav {
 	-moz-border-radius: 6px !important;
 	overflow: hidden;
 }
-.vesco-top-nav {
+.ttswa-top-nav {
     background: #282A2E;;
     padding: 7px 0;
 }
 
-.vesco-nav-wrapper {
+.ttswa-nav-wrapper {
     padding: 0px 85px;
 }
 
@@ -421,7 +421,7 @@ nav {
     max-height: none !important;
 }
 
-.vesco-top-nav ul.navbar-nav>li.active>a {
+.ttswa-top-nav ul.navbar-nav>li.active>a {
     color: #34c6d3;
     
 }

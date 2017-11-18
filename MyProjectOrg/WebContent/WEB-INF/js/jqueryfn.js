@@ -8,12 +8,12 @@ $(window).scroll(function () {
 
 if ($(this).scrollTop() < 40) {
 //hide nav
-$("nav").removeClass("vesco-top-nav");
+$("nav").removeClass("ttswa-top-nav");
 $("#back-to-top").fadeOut();
 
 } else {
 //show nav
-$("nav").addClass("vesco-top-nav");
+$("nav").addClass("ttswa-top-nav");
 $("#back-to-top").fadeIn();
 }
 });
