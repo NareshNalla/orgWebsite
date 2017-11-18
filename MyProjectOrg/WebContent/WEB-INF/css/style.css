@@ -266,13 +266,13 @@ body {font-family: Verdana,sans-serif;}
 
 /* //slider */
 div.slider {
-  width: 850px;
+  width: 800px;
   height: 400px;
   border: 1px solid black;
 }
 
  div#slide1{
-    background: url(../images/a/image01.jpg) no-repeat top left;
+    background: url(../images/a/1.jpg) no-repeat top left;
      width: 800px;
     height: 400px;
     margin: 8px;
@@ -281,7 +281,7 @@ div.slider {
     overflow: hidden;
 }
  div#slide2{
-    background: url(../images/a/image02.jpg) no-repeat top left;
+    background: url(../images/a/2.jpg) no-repeat top left;
     width: 800px;
     height: 400px;
     margin: 8px;
@@ -290,9 +290,9 @@ div.slider {
     overflow: hidden;
 }
  div#slide3{
-    background: url(../images/a/image03.jpg) no-repeat top left;
-    width: 900px;
-    height: 500px;
+    background: url(../images/a/3.jpg) no-repeat top left;
+    width: 800px;
+    height: 400px;
     margin: 8px;
     display: block;
     text-indent: -9999px;
@@ -542,3 +542,49 @@ form .form-control {
     color: #fff;
 }
 
+/* social media icons administation */
+ul#menu li {
+    display:inline;
+}
+
+/* drop down */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+/* end */

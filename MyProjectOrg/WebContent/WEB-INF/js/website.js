@@ -2,14 +2,19 @@ angular.module('website', ['ngRoute']).
     config(function ($routeProvider) {
         $routeProvider.
             when('/about', {templateUrl: 'partials/about.html', controller: 'AboutCtrl'}).
-            when('/studentCorner', {templateUrl: 'partials/studentCorner.html', controller: 'studentCorner'}).
             when('/ourVision', {templateUrl: 'partials/ourVision.html', controller: 'AboutCtrl'}).
+            when('/administration', {templateUrl: 'partials/administration.html', controller: 'AboutCtrl'}).
             when('/gallery', {templateUrl: 'partials/gallery.html', controller: 'AboutCtrl'}).
+            when('/gphotos', {templateUrl: 'partials/gphotos.html', controller: 'AboutCtrl'}).
+            when('/gvideo', {templateUrl: 'partials/gvideo.html', controller: 'AboutCtrl'}).
+            when('/gmedia', {templateUrl: 'partials/gmedia.html', controller: 'AboutCtrl'}).
+            when('/gpress', {templateUrl: 'partials/gpress.html', controller: 'AboutCtrl'}).
+            when('/studentCorner', {templateUrl: 'partials/studentCorner.html', controller: 'studentCorner'}).
             when('/contact', {templateUrl: 'partials/contact.html', controller: 'AboutCtrl'}).
-            when('/administration ', {templateUrl: 'partials/administration.html', controller: 'Administration '}).
-             
             when('/home', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'}).
             otherwise({redirectTo: '/home'});
+        
+       
     })
     .controller('AboutCtrl', function ($scope, StateService) {
         $scope.title = 'About Page';
