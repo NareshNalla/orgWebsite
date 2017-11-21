@@ -4,11 +4,11 @@ angular.module('website', ['ngRoute']).
             when('/about', {templateUrl: 'partials/about.html', controller: 'AboutCtrl'}).
             when('/ourVision', {templateUrl: 'partials/ourVision.html', controller: 'AboutCtrl'}).
             when('/administration', {templateUrl: 'partials/administration.html', controller: 'AboutCtrl'}).
-            when('/gallery', {templateUrl: 'partials/gallery.html', controller: 'AboutCtrl'}).
-            when('/gphotos', {templateUrl: 'partials/gphotos.html', controller: 'AboutCtrl'}).
-            when('/gvideo', {templateUrl: 'partials/gvideo.html', controller: 'AboutCtrl'}).
-            when('/gmedia', {templateUrl: 'partials/gmedia.html', controller: 'AboutCtrl'}).
-            when('/gpress', {templateUrl: 'partials/gpress.html', controller: 'AboutCtrl'}).
+            when('/gallery', {templateUrl: 'partials/gallery.html', controller: 'GalleryCtrl'}).
+            when('/gphotos', {templateUrl: 'partials/gphotos.html', controller: 'GalleryCtrl'}).
+            when('/gvideo', {templateUrl: 'partials/gvideo.html', controller: 'GalleryCtrl'}).
+            when('/gmedia', {templateUrl: 'partials/gmedia.html', controller: 'GalleryCtrl'}).
+            when('/gpress', {templateUrl: 'partials/gpress.html', controller: 'GalleryCtrl'}).
             when('/studentCorner', {templateUrl: 'partials/studentCorner.html', controller: 'studentCorner'}).
             when('/contact', {templateUrl: 'partials/contact.html', controller: 'AboutCtrl'}).
             when('/home', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'}).
@@ -19,37 +19,34 @@ angular.module('website', ['ngRoute']).
     .controller('AboutCtrl', function ($scope, StateService) {
         $scope.title = 'About Page';
         $scope.body = 'This is the about page body';
-
-        $scope.message = StateService.getMessage();
-
-        $scope.updateMessage = function (m) {
-            StateService.setMessage(m);
-        };
-    })
-    .controller('ExperimentsCtrl', function ($scope, StateService, ExperimentsService) {
-        $scope.title = 'Experiments Page';
-        $scope.body = 'This is the about experiments body';
-
-        $scope.message = StateService.getMessage();
-        $scope.experiments = ExperimentsService.getExperiments();
-
-        $scope.updateMessage = function (m) {
-            StateService.setMessage(m);
-        };
+      
+        $scope.gallerybottom = true;
+        $scope.logobottom = true;
+        
+       
     })
     .controller('HomeCtrl', function ($scope, StateService) {
+    	
         $scope.title = 'Home Page';
         $scope.body = 'This is the about home body';
-
-        $scope.message = StateService.getMessage();
-
-        $scope.updateMessage = function (m) {
-            StateService.setMessage(m);
-        };
+        $scope.gallerybottom = false;
+        $scope.logobottom = true;
+       
+     
         $scope.myIndex = 0;
         carousel();
-        //showSlides(); 
+        
     })
+     .controller('GalleryCtrl', function ($scope, StateService, ExperimentsService) {
+        $scope.title = 'Gallery';
+        $scope.gallerybottom = false;
+        $scope.logobottom = false;
+        
+        /*$scope.gallerybottom = true;
+        $scope.logobottom = true;*/
+       
+    })
+     
  
     .factory('StateService', function () {
         var message = 'Hello Message';
@@ -65,20 +62,7 @@ angular.module('website', ['ngRoute']).
             setMessage: setMessage
         }
     })
-    .service('ExperimentsService', function () {
-        var service = this,
-            experiments = [
-                {name: 'Experiment 1', description: 'This is an experiment', completed:0},
-                {name: 'Experiment 2', description: 'This is an experiment', completed:0},
-                {name: 'Experiment 3', description: 'This is an experiment', completed:0},
-                {name: 'Experiment 4', description: 'This is an experiment', completed:0}
-            ];
-
-        service.getExperiments = function() {
-            return experiments;
-        };
-    })
-    .directive('experiment', function(){
+     .directive('experiment', function(){
         var linker = function (scope, element, attrs) {
             element.on('click', function(){
                 scope.doExperiment();
@@ -106,27 +90,6 @@ angular.module('website', ['ngRoute']).
         }
     });
 
-
-function showSlides() {
-	console.log("1@");
-	var slideIndex = 0;
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-       slides[i].style.display = "none";  
-    }
-    slideIndex++;
-    console.log("1@slideIn"+slideIndex);
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-        console.log("dotsclassN"+dots[i].className);
-    }
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
 var myIndex = 0;
 function carousel() {
 
@@ -138,5 +101,5 @@ function carousel() {
     myIndex++;
     if (myIndex > x.length) {myIndex = 1}    
     x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000); // Change image every 2 seconds
+    setTimeout(carousel, 5000); // Change image every 5 seconds
 }

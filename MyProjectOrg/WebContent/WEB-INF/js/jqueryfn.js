@@ -18,6 +18,21 @@ $("#back-to-top").fadeIn();
 }
 });
 });
+//Smooth scrolling
+$(function () {
+
+    $("a.smooth-scroll1").click(function (event) {
+
+       /* event.preventDefault();*/
+
+        // get/return id like #about, #work, #team and etc
+        var section = $(this).attr("href");
+
+        $('top').animate({
+            scrollTop: $(section).offset().top - 64
+        }, 1250, "easeInOutExpo");
+    });
+});
 
 //Close mobile menu on click
 $(function(){

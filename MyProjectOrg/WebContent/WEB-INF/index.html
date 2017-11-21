@@ -139,7 +139,9 @@
 			<div class="row">
 				<div class="col-sm-2">.</div>
 				<div class="col-sm-8" >
-    <div class="col-sm-6" >
+				value:={{gallerybottom}}
+				
+    <div ng-show="{{gallerybottom}}" class="col-sm-6" >
      <h3>Our Gallery</h3>
     <marquee direction="left"  onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 2, 0);">
 <img src="images/media/1.jpg" class="img_border" width="200">
@@ -177,14 +179,13 @@
 						<h3>
 							<a href="#"> TELANGANA TECHNICAL STUDENTS WELFARE ASSOCIATION
 							</a>
-						</h3>
-						<a href="#/home" class="btn">Home</a> <a href="#/about"
-							class="btn">About</a> <a href="#/ourAim" class="btn">Our Aim</a>
-						<a href="#/ourVision" class="btn">Our Vision</a> <a
-							href="#/gallery" class="btn">Gallery</a> <a href="#/contact"
-							class="btn">Contact</a> <a class="btn"
+						</h3><div class=" center nav navbar-nav">
+                            <a class="smooth-scroll" href="#/home">Home</a> |
+                            <a class="smooth-scroll" href="#/about">About</a> |
+                            <a class="smooth-scroll" href="#/contact">Contact</a> |
+                             <a class="smooth-scroll"
 							href="mailto:rangeeth@live.com"
-							alt="give feedback to nrs24@live.com" tabindex="100">Email Us</a>
+							alt="give feedback to nrs24@live.com" tabindex="100">Email Us</a></div>
 						</p>
 					</div>
 
