@@ -531,16 +531,7 @@ address strong,
     letter-spacing: 1px;
 }
 
-form .form-control {
-    background: transparent;
-    border-radius: 0;
-    border-color: #fff;
-    font-size: 17px;
-    font-weight: 300;
-    padding: 8px 16px;
-    margin-bottom: 20px;
-    color: #fff;
-}
+
 
 /* social media icons administation */
 ul#menu li {
@@ -550,7 +541,7 @@ ul#menu li {
 /* drop down */
 .dropbtn {
     background-color: #4CAF50;
-    color: white;
+    color: black;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -586,5 +577,15 @@ ul#menu li {
 
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+form .form-control {
+    background: transparent;
+    border-radius: 0;
+    border-color: #fff;
+    font-size: 17px;
+    font-weight: 300;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    color: black;
 }
 /* end */

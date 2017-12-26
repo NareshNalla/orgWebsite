@@ -1,50 +1,42 @@
 angular.module('website', ['ngRoute']).
     config(function ($routeProvider) {
         $routeProvider.
-            when('/about', {templateUrl: 'partials/about.html', controller: 'AboutCtrl'}).
-            when('/ourVision', {templateUrl: 'partials/ourVision.html', controller: 'AboutCtrl'}).
-            when('/administration', {templateUrl: 'partials/administration.html', controller: 'AboutCtrl'}).
-            when('/gallery', {templateUrl: 'partials/gallery.html', controller: 'GalleryCtrl'}).
-            when('/gphotos', {templateUrl: 'partials/gphotos.html', controller: 'GalleryCtrl'}).
-            when('/gvideo', {templateUrl: 'partials/gvideo.html', controller: 'GalleryCtrl'}).
-            when('/gmedia', {templateUrl: 'partials/gmedia.html', controller: 'GalleryCtrl'}).
-            when('/gpress', {templateUrl: 'partials/gpress.html', controller: 'GalleryCtrl'}).
-            when('/studentCorner', {templateUrl: 'partials/studentCorner.html', controller: 'studentCorner'}).
-            when('/contact', {templateUrl: 'partials/contact.html', controller: 'AboutCtrl'}).
+            when('/about', {templateUrl: 'partials/about.html'}).
+            when('/ourVision', {templateUrl: 'partials/ourVision.html'}).
+            when('/administration', {templateUrl: 'partials/administration.html'}).
+            when('/gallery', {templateUrl: 'partials/gallery.html'}).
+            when('/gphotos', {templateUrl: 'partials/gphotos.html'}).
+            when('/gvideo', {templateUrl: 'partials/gvideo.html'}).
+            when('/gmedia', {templateUrl: 'partials/gmedia.html'}).
+            when('/gpress', {templateUrl: 'partials/gpress.html'}).
+            when('/studentCorner', {templateUrl: 'partials/studentCorner.html'}).
+            when('/contact', {templateUrl: 'partials/contact.html'}).
             when('/home', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'}).
+            when('/register', {templateUrl: 'partials/register.html', controller: 'regiCtrl'}).
             otherwise({redirectTo: '/home'});
         
        
     })
-    .controller('AboutCtrl', function ($scope, StateService) {
-        $scope.title = 'About Page';
-        $scope.body = 'This is the about page body';
-      
-        $scope.gallerybottom = true;
-        $scope.logobottom = true;
-        
-       
-    })
+   
     .controller('HomeCtrl', function ($scope, StateService) {
     	
         $scope.title = 'Home Page';
         $scope.body = 'This is the about home body';
         $scope.gallerybottom = false;
         $scope.logobottom = true;
-       
+       console.log("in home");
      
         $scope.myIndex = 0;
         carousel();
         
     })
-     .controller('GalleryCtrl', function ($scope, StateService, ExperimentsService) {
-        $scope.title = 'Gallery';
+    
+    .controller('regiCtrl', function ($scope, StateService, ExperimentsService) {
+        $scope.title = 'Registration';
+        console.log("in regi");
+        
         $scope.gallerybottom = false;
         $scope.logobottom = false;
-        
-        /*$scope.gallerybottom = true;
-        $scope.logobottom = true;*/
-       
     })
      
  
@@ -90,7 +82,7 @@ angular.module('website', ['ngRoute']).
         }
     });
 
-var myIndex = 0;
+ myIndex = 0;
 function carousel() {
 
     var i;

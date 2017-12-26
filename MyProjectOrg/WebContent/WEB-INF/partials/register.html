@@ -1,0 +1,172 @@
+<div class="container" ng-controller="regiCrtl">
+	<div class="content-box">
+		<div class="content-title wow animated fadeInDown"
+			data-wow-duration="1s" data-wow-delay=".5s">
+			<h1>
+				<strong>Register</strong>
+			</h1>
+			<div class="content-title-underline"></div>
+		</div>
+
+		<div class="row wow animated fadeInUp" data-wow-duration="1s"
+			data-wow-delay=".5s">
+			<div class="col-md-8">
+			<a href="#register1">register1</a> <br>
+             <div ng-bind="title"></div>
+				<div class="formContainer" align="center" id="form_container">
+					<form class="form-inline" role="form" style="align: center;"
+						action="register" method="post" name="stdForm">
+						<div class="form-group">
+						<span>
+						stdForm.firstName.$valid: {{stdForm.firstName.$valid }}
+						stdForm.firstName.$dirty: {{stdForm.firstName.$dirty}}
+						stdForm.firstName.$pristine: {{stdForm.firstName.$pristine}}
+						stdForm.firstName.$error: {{stdForm.firstName.$error}}
+						stdForm.firstName.$invalid: {{stdForm.firstName.$invalid}}
+						</span>
+						{{1+2}}
+							<label for="firstName">First Name :</label> <input type="text"  class="form-control" ng-model="student.firstName" name="firstName"
+								size="28" required>
+								<span ng-show="stdForm.firstName.$error.required && stdForm.firstName.$dirty" class="small text-muted ">This field is required</span>
+						</div>
+						<div class="form-group">
+							<label>LST_NM:</label> <input type="text"  class="form-control" ng-model="student.lastName" name="lastName"
+								size="28" required>
+						</div>
+						<div class="form-group">
+							<label>LST_NM:</label> <input type="text"  class="form-control" ng-model="student.lastName" name="lastName"
+								size="28" required>
+						</div>
+						<div class="form-group">
+							<label>Gender:</label> <input type="radio" class="form-control" ng-model="student.gender" name="gender"
+								value="male"> Male &nbsp; <input type="radio"
+								name="gender" value="female"> Female<br>
+						</div>
+						<div class="form-group">
+							<label>EMAIL_ADR :</label> <input type="text" class="form-control" ng-model="student.email_adr" name="email_adr"
+								size="28" required>
+						</div>
+						<div class="form-group">
+							<label>MOBL_NM:</label> <input type="text" class="form-control" ng-model="student.mobl_nm"  name="mobl_nm"
+								size="28" required>
+						</div>
+						<div class="form-group">
+							<label>Occupation:</label> <input type="radio" class="form-control" ng-model="student.occupationId1" id="occupationId1"
+								name="occupation" value="student"> Student &nbsp; <input
+								type="radio"  class="form-control" ng-model="student.occupationId2" id="occupationId2" name="occupation"
+								value="teaching"> Teaching<br>
+						</div>
+
+						<div class="form-group">
+							<label>COLG_NM:</label> <input type="text" class="form-control" ng-model="student.colg_nm" name="colg_nm"
+								size="28" required>
+						</div>
+						<div class="form-group">
+							<label>COLG_UNIVRSTY:</label> <input type="text" class="form-control" ng-model="student.univ_nm" name="univ_nm"
+								size="28" required>
+						</div>
+
+						<div class="form-group">
+							<label>JOIN_YEAR:</label> <select name="colg_join_year" class="form-control" ng-model="student.colg_join_year" required>
+								<option value='1981'>1981</option>
+								<option value='1982'>1982</option>
+								<option value='1983'>1983</option>
+								<option value='1984'>1984</option>
+								<option value='1985'>1985</option>
+								<option value='1986'>1986</option>
+								<option value='1987'>1987</option>
+								<option value='1988'>1988</option>
+								<option value='1989'>1989</option>
+								<option value='1990'>1990</option>
+								<option value='1991'>1991</option>
+								<option value='1992'>1992</option>
+								<option value='1993'>1993</option>
+								<option value='1986'>1994</option>
+								<option value='1987'>1995</option>
+								<option value='1988'>1996</option>
+								<option value='1989'>1997</option>
+								<option value='1990'>1998</option>
+								<option value='1991'>1999</option>
+								<option value='1992'>2000</option>
+								<option value='1993'>2001</option>
+								<option value='1992'>1992</option>
+								<option value='1993'>1993</option>
+								<option value='1986'>1994</option>
+								<option value='1987'>1995</option>
+								<option value='1988'>1996</option>
+								<option value='1989'>1997</option>
+								<option value='1990'>1998</option>
+								<option value='1991'>1999</option>
+								<option value='2000'>2000</option>
+								<option value='2001'>2001</option>
+								<option value='2002'>2002</option>
+								<option value='2003'>2003</option>
+								<option value='2004'>2004</option>
+								<option value='2005'>2005</option>
+								<option value='2006'>2006</option>
+								<option value='2007'>2007</option>
+								<option value='2008'>2008</option>
+								<option value='2009'>2009</option>
+								<option value='2010'>2010</option>
+								<option value='2011'>2011</option>
+								<option value='2012'>2012</option>
+								<option value='2013'>2013</option>
+								<option value='2014'>2014</option>
+								<option value='2015'>2015</option>
+								<option value='2016'>2016</option>
+								<option value='2017'>2017</option>
+								<option value='2018'>2018</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>ADR_L1:</label> <input type="text" class="form-control" ng-model="student.adr_ln1" name="adr_ln1"
+								size="28" required>
+						</div>
+						<div class="form-group">
+							<label>ADR_L2:</label> <input type="text" class="form-control" ng-model="student.adr_ln2" name="adr_ln2"
+								size="28" required>
+						</div>
+						<div class="form-group">
+							<label>District:</label> <select name="district" class="form-control" ng-model="student.district" required>
+								<option value="Adilabad">Adilabad</option>
+								<option value="Bhadradri Kothagudem">Bhadradri
+									Kothagudem</option>
+								<option value="Hyderabad">Hyderabad</option>
+								<option value="Jagtial">Jagtial</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jayashankar Bhupalapally">Jayashankar
+									Bhupalapally</option>
+								<option value="Jogulamba Gadwal">Jogulamba Gadwal</option>
+								<option value="Kamareddy">Kamareddy</option>
+								<option value="Karimnagar">Karimnagar</option>
+								<option value="Khammam">Khammam</option>
+								<option value="Kumarambheem Asifabad">Kumarambheem
+									Asifabad</option>
+								<option value="Mahabubabad">Mahabubabad</option>
+								<option value="Mahabubnagar">Mahabubnagar</option>
+								<option value="Mancherial">Mancherial</option>
+								<option value="Medak">Medak</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>STATE:</label> <input type="text"  ng-model="student.state" name="state" size="28"
+								value="Telanagan" style="" required>
+						</div>
+
+						<div class="form-group">
+							<input class="btn btn-primary" type="submit" value="Submit" ng-disabled="stdForm.$invalid">  &nbsp; &nbsp; <input class="btn btn-primary" type="reset" value="Reset" ng-disabled="stdForm.$pristine">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
