@@ -82,11 +82,17 @@ angular.module('website', ['ngRoute']).
         }
     });
 
- myIndex = 0;
+myIndex =0; 
 function carousel() {
-
+	
     var i;
     var x = document.getElementsByClassName("mySlides");
+    if(x == undefined){		
+		return;
+	}
+    if(myIndex == undefined){		
+		return;
+	}
     for (i = 0; i < x.length; i++) {
        x[i].style.display = "none";  
     }
