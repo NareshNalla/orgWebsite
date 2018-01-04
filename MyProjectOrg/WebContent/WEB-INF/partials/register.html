@@ -11,62 +11,51 @@
 		<div class="row wow animated fadeInUp" data-wow-duration="1s"
 			data-wow-delay=".5s">
 			<div class="col-md-8">
-			<a href="#register1">register1</a> <br>
-             <div ng-bind="title"></div>
+
 				<div class="formContainer" align="center" id="form_container">
 					<form class="form-inline" role="form" style="align: center;"
-						action="register" method="post" name="stdForm">
-						<div class="form-group">
-						<span>
-						stdForm.firstName.$valid: {{stdForm.firstName.$valid }}
-						stdForm.firstName.$dirty: {{stdForm.firstName.$dirty}}
-						stdForm.firstName.$pristine: {{stdForm.firstName.$pristine}}
-						stdForm.firstName.$error: {{stdForm.firstName.$error}}
-						stdForm.firstName.$invalid: {{stdForm.firstName.$invalid}}
-						</span>
-						{{1+2}}
+						 method="post" name="stdForm">
+						<div class="form-group">		
 							<label for="firstName">First Name :</label> <input type="text"  class="form-control" ng-model="student.firstName" name="firstName"
 								size="28" required>
 								<span ng-show="stdForm.firstName.$error.required && stdForm.firstName.$dirty" class="small text-muted ">This field is required</span>
-						</div>
+						</div><br>
+						
 						<div class="form-group">
 							<label>LST_NM:</label> <input type="text"  class="form-control" ng-model="student.lastName" name="lastName"
 								size="28" required>
-						</div>
-						<div class="form-group">
-							<label>LST_NM:</label> <input type="text"  class="form-control" ng-model="student.lastName" name="lastName"
-								size="28" required>
-						</div>
-						<div class="form-group">
-							<label>Gender:</label> <input type="radio" class="form-control" ng-model="student.gender" name="gender"
-								value="male"> Male &nbsp; <input type="radio"
-								name="gender" value="female"> Female<br>
-						</div>
+						</div><br>
+						<div class="radio form-group">
+							<label>Gender:</label> <label><input type="radio" class="form-control" ng-model="student.gender" id="gender"
+								name="gender" value="male"> Male </label> &nbsp; <label><input
+								type="radio"  class="form-control" ng-model="student.gender" id="gender1" name="gender"
+								value="female"> Female </label><br>
+						</div><br>
 						<div class="form-group">
 							<label>EMAIL_ADR :</label> <input type="text" class="form-control" ng-model="student.email_adr" name="email_adr"
 								size="28" required>
-						</div>
+						</div><br>
 						<div class="form-group">
 							<label>MOBL_NM:</label> <input type="text" class="form-control" ng-model="student.mobl_nm"  name="mobl_nm"
 								size="28" required>
-						</div>
-						<div class="form-group">
-							<label>Occupation:</label> <input type="radio" class="form-control" ng-model="student.occupationId1" id="occupationId1"
-								name="occupation" value="student"> Student &nbsp; <input
+						</div><br>
+						<div class="radio form-group">
+							<label>Occupation:</label> <label><input type="radio" class="form-control" ng-model="student.occupationId1" id="occupationId1"
+								name="occupation" value="student"> Student </label> &nbsp; <label><input
 								type="radio"  class="form-control" ng-model="student.occupationId2" id="occupationId2" name="occupation"
-								value="teaching"> Teaching<br>
-						</div>
+								value="teaching"> Teaching </label><br>
+						</div><br>
 
 						<div class="form-group">
 							<label>COLG_NM:</label> <input type="text" class="form-control" ng-model="student.colg_nm" name="colg_nm"
 								size="28" required>
-						</div>
+						</div><br>
 						<div class="form-group">
 							<label>COLG_UNIVRSTY:</label> <input type="text" class="form-control" ng-model="student.univ_nm" name="univ_nm"
 								size="28" required>
-						</div>
+						</div><br>
 
-						<div class="form-group">
+						<div class="dropdown">
 							<label>JOIN_YEAR:</label> <select name="colg_join_year" class="form-control" ng-model="student.colg_join_year" required>
 								<option value='1981'>1981</option>
 								<option value='1982'>1982</option>
@@ -117,16 +106,16 @@
 								<option value='2017'>2017</option>
 								<option value='2018'>2018</option>
 							</select>
-						</div>
+						</div><br>
 						<div class="form-group">
 							<label>ADR_L1:</label> <input type="text" class="form-control" ng-model="student.adr_ln1" name="adr_ln1"
 								size="28" required>
-						</div>
+						</div><br>
 						<div class="form-group">
 							<label>ADR_L2:</label> <input type="text" class="form-control" ng-model="student.adr_ln2" name="adr_ln2"
 								size="28" required>
-						</div>
-						<div class="form-group">
+						</div><br>
+						<div class="dropdown">
 							<label>District:</label> <select name="district" class="form-control" ng-model="student.district" required>
 								<option value="Adilabad">Adilabad</option>
 								<option value="Bhadradri Kothagudem">Bhadradri
@@ -155,14 +144,13 @@
 								<option value="Jangaon">Jangaon</option>
 								<option value="Jangaon">Jangaon</option>
 							</select>
-						</div>
+						</div><br>
 						<div class="form-group">
-							<label>STATE:</label> <input type="text"  ng-model="student.state" name="state" size="28"
-								value="Telanagan" style="" required>
-						</div>
+							<label>STATE:</label> <input type="text"  ng-model="student.state" name="state" size="28" value="Telanagan" style="" required>
+						</div><br>
 
 						<div class="form-group">
-							<input class="btn btn-primary" type="submit" value="Submit" ng-disabled="stdForm.$invalid">  &nbsp; &nbsp; <input class="btn btn-primary" type="reset" value="Reset" ng-disabled="stdForm.$pristine">
+							<input class="btn btn-primary" type="submit" ng-click="submit()" value="Submit" ng-disabled="stdForm.$invalid">  &nbsp; &nbsp; <input class="btn btn-primary" type="reset" value="Reset" ng-disabled="stdForm.$pristine">
 						</div>
 					</form>
 				</div>

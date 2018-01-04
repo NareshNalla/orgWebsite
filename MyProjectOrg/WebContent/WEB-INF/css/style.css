@@ -539,7 +539,7 @@ ul#menu li {
 }
 
 /* drop down */
-.dropbtn {
+/* .dropbtn {
     background-color: #4CAF50;
     color: black;
     padding: 16px;
@@ -577,8 +577,8 @@ ul#menu li {
 
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
-}
-form .form-control {
+} */
+/* form .form-control {
     background: transparent;
     border-radius: 0;
     border-color: #fff;
@@ -587,5 +587,5 @@ form .form-control {
     padding: 8px 16px;
     margin-bottom: 20px;
     color: black;
-}
+} */
 /* end */
