@@ -34,7 +34,6 @@ angular.module('website', ['ngRoute']).
     .controller('regiCtrl', function ($scope,$http) {
         $scope.title = 'Registration';
         console.log("in regi");
-        alert("abcde");
         $scope.gallerybottom = false;
         $scope.logobottom = false;
         $scope.submit();
@@ -100,43 +99,28 @@ angular.module('website', ['ngRoute']).
         };
         
         })
-    .factory('StateService', function () {
-        var message = 'Hello Message';
-        var getMessage = function () {
-            return message;
-        };
-        var setMessage = function (m) {
-            message = m;
-        };
-
-        return {
-            getMessage: getMessage,
-            setMessage: setMessage
-        }
-    })
-     .directive('experiment', function(){
+   
+     .directive('gotop', function(){
         var linker = function (scope, element, attrs) {
             element.on('click', function(){
-                scope.doExperiment();
+                scope.goTop();
             })
         };
 
         var controller =  function($scope){
-            $scope.doExperiment = function() {
+            $scope.goTop = function() {
                 $scope.$apply(function(){
-                    $scope.experiment.completed++;
+                    //
+                	document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
                 });
             };
         };
 
         return {
             scope: true,
-            restrict: 'E',
-            template: '<div class="experiment">' +
-                '<h3>{{experiment.name}}</h3>' +
-                '<p>{{experiment.description}}</p>' +
-                '<p><strong>{{experiment.completed}}</strong></p>' +
-                '</div>',
+            restrict: 'EA',
+            /*template: '',*/
             link: linker,
             controller: controller
         }
@@ -160,4 +144,15 @@ function carousel() {
     if (myIndex > x.length) {myIndex = 1}    
     x[myIndex-1].style.display = "block";  
     setTimeout(carousel, 5000); // Change image every 5 seconds
+}
+
+/*//goto top
+window.onscroll = function() {scrollFunction()};*/
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
 }

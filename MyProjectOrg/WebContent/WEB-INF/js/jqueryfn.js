@@ -5,6 +5,7 @@ NAVIGATION
 $(function () {
 
 $(window).scroll(function () {
+	scrollFunction();
 
 if ($(this).scrollTop() < 40) {
 //hide nav
