@@ -74,7 +74,7 @@ angular.module('website', ['ngRoute']).
             	};
 
             	//Call the services
-            	$http.post('http://52.66.176.19:8080/hiber/#/register', JSON.stringify(data)).then(function (response) {
+            	$http.post('http://54.200.164.87:8080/hiber/#/register', JSON.stringify(data)).then(function (response) {
 
             		if (response.data)
 
